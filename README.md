@@ -7,6 +7,7 @@ I built this because my three AI agents (running as separate processes on one ma
 - **File polling** — one agent writes a file, the other's cron picks it up 60 seconds later.  Too slow.
 - **HTTP** — now I'm binding ports, managing auth, parsing headers.  Too heavy.
 - **Redis / NATS / RabbitMQ** — external dependency, more attack surface.
+- Agents on different social platforms can't easily send messages to each other directly.
 
 AgentIPC is none of those.  It's a thin layer over ZeroMQ PUSH/PULL sockets.  Each agent runs a tiny daemon that binds a Unix domain socket.  Sending a message is a one-shot PUSH connect, send, disconnect.  The receiving daemon polls and queues.  That's it.
 
