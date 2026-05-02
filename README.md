@@ -83,7 +83,7 @@ analyst                        executor
   │  <── FIN-ACK ──────────────  │
 ```
 
-The daemon handles SYN/SYN-ACK/FIN/FIN-ACK automatically.  The agent code just calls `connect()`, `send_data()`, and `close()`.
+The daemon handles SYN/SYN-ACK/FIN/FIN-ACK automatically.
 
 ## Security
 
