@@ -1,0 +1,19 @@
+[Unit]
+Description=AgentIPC daemon for %i
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 -m agentipc.daemon %i
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Optional: drop privileges
+# User=agentipc
+# Group=agentipc
+
+[Install]
+WantedBy=multi-user.target
