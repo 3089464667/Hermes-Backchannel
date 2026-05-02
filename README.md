@@ -107,4 +107,4 @@ Also: ZMQ's `PUSH/PULL` pattern is exactly the right abstraction for this.  Each
 
 ## License
 
-MIT — use it however you want.
+MIT
